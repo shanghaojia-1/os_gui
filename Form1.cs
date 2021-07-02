@@ -16,5 +16,10 @@ namespace 操作系统界面
         {
             InitializeComponent();
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
