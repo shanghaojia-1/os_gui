@@ -21,5 +21,20 @@ namespace 操作系统界面
         {
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if(textBox1_PID.Text=="" || textBox_SID.Text=="" || textBox_PageID.Text=="")
+            {
+                MessageBox.Show("请正确输入各个参数");
+                return;
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            CreateProcessForm form = new CreateProcessForm();
+            form.ShowDialog();
+        }
     }
 }

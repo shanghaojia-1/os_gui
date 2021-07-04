@@ -30,6 +30,7 @@ namespace 操作系统界面
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.button2 = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -38,11 +39,11 @@ namespace 操作系统界面
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textBox_PageID = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox_SID = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBox1_PID = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.textBox6 = new System.Windows.Forms.TextBox();
@@ -54,8 +55,6 @@ namespace 操作系统界面
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
             this.listView1 = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -68,6 +67,7 @@ namespace 操作系统界面
             this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader10 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader11 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.tabPage2 = new System.Windows.Forms.TabPage();
             this.listView2 = new System.Windows.Forms.ListView();
             this.columnHeader12 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader13 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -80,7 +80,12 @@ namespace 操作系统界面
             this.columnHeader20 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader21 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader22 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.button2 = new System.Windows.Forms.Button();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.listView3 = new System.Windows.Forms.ListView();
+            this.columnHeader23 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader24 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader25 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader26 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -88,6 +93,7 @@ namespace 操作系统界面
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
+            this.tabPage3.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -105,6 +111,16 @@ namespace 操作系统界面
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "内存信息";
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(79, 118);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 6;
+            this.button2.Text = "创建进程";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // label5
             // 
@@ -163,13 +179,13 @@ namespace 操作系统界面
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.button1);
-            this.groupBox2.Controls.Add(this.textBox3);
+            this.groupBox2.Controls.Add(this.textBox_PageID);
             this.groupBox2.Controls.Add(this.label9);
-            this.groupBox2.Controls.Add(this.textBox2);
+            this.groupBox2.Controls.Add(this.textBox_SID);
             this.groupBox2.Controls.Add(this.label8);
-            this.groupBox2.Controls.Add(this.textBox1);
+            this.groupBox2.Controls.Add(this.textBox1_PID);
             this.groupBox2.Controls.Add(this.label7);
-            this.groupBox2.Location = new System.Drawing.Point(279, 12);
+            this.groupBox2.Location = new System.Drawing.Point(269, 16);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(289, 152);
             this.groupBox2.TabIndex = 1;
@@ -184,13 +200,14 @@ namespace 操作系统界面
             this.button1.TabIndex = 6;
             this.button1.Text = "转换";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // textBox3
+            // textBox_PageID
             // 
-            this.textBox3.Location = new System.Drawing.Point(115, 73);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(143, 21);
-            this.textBox3.TabIndex = 5;
+            this.textBox_PageID.Location = new System.Drawing.Point(115, 73);
+            this.textBox_PageID.Name = "textBox_PageID";
+            this.textBox_PageID.Size = new System.Drawing.Size(143, 21);
+            this.textBox_PageID.TabIndex = 5;
             // 
             // label9
             // 
@@ -201,12 +218,12 @@ namespace 操作系统界面
             this.label9.TabIndex = 4;
             this.label9.Text = "页号";
             // 
-            // textBox2
+            // textBox_SID
             // 
-            this.textBox2.Location = new System.Drawing.Point(115, 48);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(143, 21);
-            this.textBox2.TabIndex = 3;
+            this.textBox_SID.Location = new System.Drawing.Point(115, 48);
+            this.textBox_SID.Name = "textBox_SID";
+            this.textBox_SID.Size = new System.Drawing.Size(143, 21);
+            this.textBox_SID.TabIndex = 3;
             // 
             // label8
             // 
@@ -217,12 +234,12 @@ namespace 操作系统界面
             this.label8.TabIndex = 2;
             this.label8.Text = "段号";
             // 
-            // textBox1
+            // textBox1_PID
             // 
-            this.textBox1.Location = new System.Drawing.Point(115, 19);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(143, 21);
-            this.textBox1.TabIndex = 1;
+            this.textBox1_PID.Location = new System.Drawing.Point(115, 19);
+            this.textBox1_PID.Name = "textBox1_PID";
+            this.textBox1_PID.Size = new System.Drawing.Size(143, 21);
+            this.textBox1_PID.TabIndex = 1;
             // 
             // label7
             // 
@@ -331,27 +348,6 @@ namespace 操作系统界面
             this.tabPage1.Text = "内存块信息";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // tabPage2
-            // 
-            this.tabPage2.Controls.Add(this.listView2);
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(786, 284);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "磁盘块信息";
-            this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // tabPage3
-            // 
-            this.tabPage3.Location = new System.Drawing.Point(4, 22);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(786, 284);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "进程信息";
-            this.tabPage3.UseVisualStyleBackColor = true;
-            // 
             // listView1
             // 
             this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
@@ -367,9 +363,9 @@ namespace 操作系统界面
             this.columnHeader10,
             this.columnHeader11});
             this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(3, 6);
+            this.listView1.Location = new System.Drawing.Point(0, 0);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(780, 272);
+            this.listView1.Size = new System.Drawing.Size(786, 284);
             this.listView1.TabIndex = 0;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
@@ -418,6 +414,17 @@ namespace 操作系统界面
             // 
             this.columnHeader11.Text = "10";
             // 
+            // tabPage2
+            // 
+            this.tabPage2.Controls.Add(this.listView2);
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(786, 284);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "磁盘块信息";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
             // listView2
             // 
             this.listView2.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
@@ -433,9 +440,9 @@ namespace 操作系统界面
             this.columnHeader21,
             this.columnHeader22});
             this.listView2.HideSelection = false;
-            this.listView2.Location = new System.Drawing.Point(3, 3);
+            this.listView2.Location = new System.Drawing.Point(0, 0);
             this.listView2.Name = "listView2";
-            this.listView2.Size = new System.Drawing.Size(780, 272);
+            this.listView2.Size = new System.Drawing.Size(786, 281);
             this.listView2.TabIndex = 1;
             this.listView2.UseCompatibleStateImageBehavior = false;
             this.listView2.View = System.Windows.Forms.View.Details;
@@ -484,14 +491,48 @@ namespace 操作系统界面
             // 
             this.columnHeader22.Text = "10";
             // 
-            // button2
+            // tabPage3
             // 
-            this.button2.Location = new System.Drawing.Point(79, 118);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 6;
-            this.button2.Text = "创建进程";
-            this.button2.UseVisualStyleBackColor = true;
+            this.tabPage3.Controls.Add(this.listView3);
+            this.tabPage3.Location = new System.Drawing.Point(4, 22);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage3.Size = new System.Drawing.Size(786, 284);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "进程信息";
+            this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // listView3
+            // 
+            this.listView3.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader23,
+            this.columnHeader24,
+            this.columnHeader25,
+            this.columnHeader26});
+            this.listView3.HideSelection = false;
+            this.listView3.Location = new System.Drawing.Point(0, 0);
+            this.listView3.Name = "listView3";
+            this.listView3.Size = new System.Drawing.Size(780, 272);
+            this.listView3.TabIndex = 1;
+            this.listView3.UseCompatibleStateImageBehavior = false;
+            this.listView3.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader23
+            // 
+            this.columnHeader23.Text = "进程id";
+            // 
+            // columnHeader24
+            // 
+            this.columnHeader24.Text = "进程名";
+            // 
+            // columnHeader25
+            // 
+            this.columnHeader25.Text = "进程总大小";
+            this.columnHeader25.Width = 100;
+            // 
+            // columnHeader26
+            // 
+            this.columnHeader26.Text = "进程段数";
             // 
             // Form1
             // 
@@ -516,6 +557,7 @@ namespace 操作系统界面
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
+            this.tabPage3.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -531,11 +573,11 @@ namespace 操作系统界面
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox textBox_PageID;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBox_SID;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBox1_PID;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.TextBox textBox4;
@@ -574,6 +616,11 @@ namespace 操作系统界面
         private System.Windows.Forms.ColumnHeader columnHeader20;
         private System.Windows.Forms.ColumnHeader columnHeader21;
         private System.Windows.Forms.ColumnHeader columnHeader22;
+        private System.Windows.Forms.ListView listView3;
+        private System.Windows.Forms.ColumnHeader columnHeader23;
+        private System.Windows.Forms.ColumnHeader columnHeader24;
+        private System.Windows.Forms.ColumnHeader columnHeader25;
+        private System.Windows.Forms.ColumnHeader columnHeader26;
     }
 }
 
